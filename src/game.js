@@ -54,7 +54,7 @@ inputText.oninput = () => {
     
 }
 
-let time = 5;
+let time = 60;
 const timerdiv = document.querySelector('.actualContent h1')
 timerdiv.onclick = () => {
     let actualTimer = setInterval(() => {
