@@ -43,3 +43,20 @@ document.querySelector('#tryagain').onclick = () => {
     for (let e of values) localStorage.removeItem(e)
     location.href = './game.html'
 }
+
+let swoosh = new Audio('assets/swoosh.mp3')
+let sweetSmile = new Audio('assets/A Sweet Smile.mp3')
+document.onclick = () => {
+    swoosh.pause()
+    swoosh.currentTime = 0
+    swoosh.play()
+}
+
+sweetSmile.play()
+sweetSmile.loop = true
+
+const styleVariables = document.documentElement.style;
+let timerInterval = setInterval(() => {
+    let randHue = Math.floor(Math.random() * 360);
+    styleVariables.setProperty('--hue', randHue);
+}, 3000);

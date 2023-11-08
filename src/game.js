@@ -16,22 +16,28 @@ let timerInterval = setInterval(() => {
     let randHue = Math.floor(Math.random() * 360);
     styleVariables.setProperty('--hue', randHue);
 }, 5000);
-
+const inputText = document.querySelector('.textInput')
+const mistakes = document.querySelector('#mistakes')
+let nmistakes = parseInt(mistakes.textContent)
+let keyAudio = new Audio('assets/key sound.mp3')
+let swoosh = new Audio('assets/swoosh.mp3')
+let sweetSmile = new Audio('assets/A Sweet Smile.mp3')
+let coundown = new Audio('assets/countdown.mp3')
+sweetSmile.play()
+sweetSmile.loop = true
 let Index = 0
 const textDiv = document.querySelector('.textTotype p')
 var randomIndex;
 randomPara = () => {
     randomIndex = Math.floor(Math.random() * typingTestParagraphs.length);
     typingTestParagraphs[randomIndex].split('').forEach(e => textDiv.innerHTML += `<span>${e}</span>`)
-    document.onclick = () => inputText.focus()
 }
 
 randomPara()
-
-const inputText = document.querySelector('.textInput')
-const mistakes = document.querySelector('#mistakes')
-let nmistakes = parseInt(mistakes.textContent)
 inputText.oninput = () => {
+    keyAudio.pause()
+    keyAudio.currentTime = 0
+    keyAudio.play()
     const textTobeWritten = textDiv.querySelectorAll('span')
     let current = inputText.value.split('')[Index]
     if (current == null) {
@@ -57,12 +63,20 @@ inputText.oninput = () => {
 let time = 60;
 const timerdiv = document.querySelector('.actualContent h1')
 timerdiv.onclick = () => {
+    document.onclick = () => {
+        inputText.focus()
+        swoosh.pause()
+        swoosh.currentTime = 0
+        swoosh.play()
+    }
+    sweetSmile.pause()
+    coundown.play()
     let actualTimer = setInterval(() => {
     time--
     timerdiv.textContent = time
     if ((nmistakes === 0 && inputText.value === typingTestParagraphs[randomIndex]) || time <= 0) {
-        inputText.disabled = true
         clearInterval(actualTimer);
+        inputText.disabled = true
         result()
     }
 }, 1000);
@@ -72,8 +86,8 @@ CPMWPM = () => {
     let timeTaken = 60 - time;
     let WPM = inputText.value.split(' ').length;
     let CPM = inputText.value.split('').length;
-    WPM = (WPM / timeTaken) * 60
-    CPM = (CPM / timeTaken) * 60
+    WPM = Math.floor((WPM / timeTaken) * 60)
+    CPM = Math.floor((CPM / timeTaken) * 60)
     localStorage.setItem('wpm', WPM)
     localStorage.setItem('cpm', CPM)
     localStorage.setItem('mistakes', nmistakes)

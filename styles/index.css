@@ -11,6 +11,7 @@
     font-family: 'Poppins', sans-serif;
     font-family: 'Tilt Neon', sans-serif;
     transition: 0.5s;
+
 }
 
 :root{
@@ -23,6 +24,7 @@ body{
     text-align: center;
     margin-top: 20vh;
     background-color: var(--backgroundcolor);
+    /* cursor: url('https://res.cloudinary.com/dvkugaw3b/image/upload/v1641562028/cursor_ad12rf.png'), auto; */
 }
 
 /* details */

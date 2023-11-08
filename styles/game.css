@@ -112,6 +112,7 @@ body{
     color: white;
     background-color: var(--foregroundcolor);
     margin-left: 32%;
+    cursor: pointer;
 }
 /* youdidwell ends */
 

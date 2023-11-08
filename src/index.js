@@ -13,7 +13,9 @@ const detailsH1 = document.querySelector('.details h1');
 const instructionsCard = document.querySelector('.instructionsCard');
 const instructionsBack = document.querySelector('.instructionsCard button');
 const timerdiv = document.querySelector('#homeTimer');
-
+let keyAudio = new Audio('assets/key sound.mp3')
+let swoosh = new Audio('assets/swoosh.mp3')
+let sweetSmile = new Audio('assets/A Sweet Smile.mp3')
 instructions.onclick = () => {
     detailsH4.classList.toggle('inactive');
     detailsInput.classList.toggle('inactive');
@@ -30,6 +32,22 @@ instructionsBack.onclick = () => {
     instructionsCard.classList.toggle('instructionsCardActive');
 }
 
+// audios
+detailsInput.oninput = () => {
+    keyAudio.pause()
+    keyAudio.currentTime = 0
+    keyAudio.play()
+}
+
+document.onclick = () => {
+    swoosh.pause()
+    swoosh.currentTime = 0
+    swoosh.play()
+}
+
+sweetSmile.play()
+sweetSmile.loop = true
+// audio end
 letsgo.onclick = () => {
     if (detailsInput.value.trim() === '') alert('Enter your nickname')
     else if(detailsInput.value.length > 4) alert('Maximum characters 4')
