@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Fredoka:wght@300&family=Josefin+Sans:ital,wght@1,100&family=Nosifer&family=Pacifico&family=Poppins:ital,wght@0,500;1,100&family=Tilt+Neon&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Caveat Brush', cursive;
+    font-family: 'Fredoka', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Nosifer', sans-serif;
+    font-family: 'Pacifico', cursive;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Tilt Neon', sans-serif;
+    transition: 0.5s;
+}
+
+:root {
+    --hue: 0;
+    --saturationBackground: 100%;
+    --foregroundcolor: hsl(var(--hue), 90%, 50%);
+    --backgroundcolor: hsl(var(--hue), 73%, 93%);
+}
+
+body{
+    background-color: var(--backgroundcolor);
+}
+
+#logo{
+    margin: 2vh;
+    height: 10vh;
+}
+.actualContent{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+}
+
+.actualContent h1{
+    color: var(--foregroundcolor);
+    font-size: 60px;
+    margin-bottom: 2vh;
+}
+.textTotype{
+    background-color: rgb(255, 255, 255);
+    max-height: 60vh;
+    padding: 25px;
+    border-radius: 15px;
+    overflow-y: auto;
+    letter-spacing: 2px;
+    word-spacing: 3px;
+    margin-bottom: 3vh;
+}
+
+.textTotype::-webkit-scrollbar{
+    width: 0;
+}
+.mistakes{
+    background-color: var(--foregroundcolor);
+    color: aliceblue;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 25px;
+}
+
+/* right and wrong characters */
+.right{
+    color: hsl(100, 100%, 70%)
+}
+
+.wrong{
+    color: red;
+    background-color: hsl(0, 70%, 93%);
+}
+
+/* hiding input box */
+.textInput{
+    opacity: 0;
+    z-index: -999;
+}
+
+.textTotype, .mistakes{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+/* youdidwell */
+.youdidwell{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    background-color: var(--backgroundcolor);
+    padding: 6vh;   
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: none;
+}
+
+.results{
+    margin-top: 2vh;
+    padding: 1vh;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    background-color: var(--foregroundcolor);
+    margin-left: 32%;
+}
+/* youdidwell ends */
+
+@media (max-width: 426px) {
+    .actualContent h1{
+        font-size: 3vh;
+    }
+    .youdidwell{
+        padding: 2vh;
+        font-size: 1.45vh;
+    }
+    .results{
+        margin-left: 20%;
+        text-align: center;
+        padding: 0.9vh;
+    }
+    #logo{
+        height: 5vh;
+    }
+}
