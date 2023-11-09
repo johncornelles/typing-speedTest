@@ -24,7 +24,6 @@ body{
     text-align: center;
     margin-top: 20vh;
     background-color: var(--backgroundcolor);
-    /* cursor: url('https://res.cloudinary.com/dvkugaw3b/image/upload/v1641562028/cursor_ad12rf.png'), auto; */
 }
 
 /* details */
@@ -36,9 +35,8 @@ body{
 
 #contact {
     position: absolute;
-    top: 10px;
+    top: 20px;
     right: 20px;
-    font-size: larger;
     cursor: pointer;
 }
 
@@ -126,9 +124,23 @@ input{
 .inactive{
     display: none;
 }
+/* audio icons */
+.inactiveAudio{
+    display: none;
+}
+.activeAudio{
+    display: block;
+}
 .clicker{
     cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.mute, .unmute{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
 }
 
 @media (max-width: 426px) {
