@@ -10,6 +10,7 @@ const mistakesDiv = document.querySelector('#mistakes')
 const improvementDiv = document.querySelector('#improvement')
 let percent = 0;
 let wpmLevel, feedback;
+// find level and appropriate feedback
 if (wpm < 30 || mistakes > 20) {
     wpmLevel = "Noob 🤓"
     feedback = "learn the basics"
@@ -26,6 +27,7 @@ else {
     feedback = "keep up the good work!"
 }
 
+// adding details to the page
 level.textContent = `You are a ${wpmLevel}`
 
 statsName.textContent = `${username}'s speed beats ${percent}% of the people`
@@ -37,13 +39,13 @@ document.querySelector('#home').onclick = () => {
     localStorage.clear();
     location.href = './index.html'
 }
-
+// remove all values except name
 document.querySelector('#tryagain').onclick = () => {
     const values = ['wpm', 'cpm', 'mistakes']
     for (let e of values) localStorage.removeItem(e)
     location.href = './game.html'
 }
-
+// audios
 let swoosh = new Audio('assets/swoosh.mp3')
 let sweetSmile = new Audio('assets/A Sweet Smile.mp3')
 document.onclick = () => {
@@ -55,6 +57,7 @@ document.onclick = () => {
 sweetSmile.play()
 sweetSmile.loop = true
 
+// changing background color
 const styleVariables = document.documentElement.style;
 let timerInterval = setInterval(() => {
     let randHue = Math.floor(Math.random() * 360);
