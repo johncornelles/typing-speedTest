@@ -11,8 +11,7 @@ The Typing Speed Test is a web-based application that allows you to test your ty
 - **Typing Test**: The main feature of this project is the typing test. You'll be given a random paragraph to type out as quickly and accurately as possible. Your speed (in words per minute) and accuracy will be calculated and displayed at the end of the test.
 
 - **Instant Feedback**: As you type, the application will highlight your errors in red, allowing you to see and correct your mistakes instantly.
-
-- 
+- WPM and CPM will be displayed
 
 ## How to Use
 
